@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	   		http://www.springframework.org/schema/context
+	   		http://www.springframework.org/schema/context/spring-context-4.0.xsd
+			http://www.springframework.org/schema/mvc 
+			http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+	
+	<!-- Activates various annotations to be detected in bean classes -->
+	<context:annotation-config />
+	
+	<!-- Scans the classpath for annotated components that will be auto-registered as Spring beans.
+	 For example @Controller and @Service. Make sure to set the correct base-package-->
+	<context:component-scan base-package="co.fifa.world.cup" />
+	
+	<!-- Configures the annotation-driven Spring MVC Controller programming model.
+	Note that, with Spring 3.0, this tag works in Servlet MVC only!  -->
+	<mvc:annotation-driven /> 
+	
+	<!-- Loads MongoDB configuraton -->
+	<import resource="mongo-config.xml"/>
+	
+	    <!--  all resources inside folder src/main/webapp/resources are mapped so they can be refered to inside JSP files
+        (see header.jsp for more details) -->
+    <mvc:resources mapping="/**" location="/"/>
+    
+        <!-- Jackson Mapper -->
+    <bean id="jacksonObjectMapper" class="org.codehaus.jackson.map.ObjectMapper" />    
+    
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <!-- This allows us to write jaxb annotated objects to the response directly from controllers -->
+                <bean class = "org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
+                <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+                    <property name="prefixJson" value="false"/>
+                    <property name="supportedMediaTypes" value="application/json"/>
+                    <property name="objectMapper" ref="jacksonObjectMapper" />
+                    
+                </bean>
+            </list>
+        </property>
+    </bean>    
+	
+</beans>

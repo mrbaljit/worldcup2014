@@ -1,0 +1,27 @@
+<div ng-cloak>
+
+<form name="soccerForm">
+
+<h2><img src="resources/images/fifa.PNG"> Betting Pool - {{soccer.totalAmount| currency}}</h2>
+
+<h3 style="color:#FF0000">&nbsp; &nbsp; &nbsp;You can only change your team once before 2nd round starts. Good luck.</h3>
+
+	<table class="table table-striped table-condensed table-bordered table-hover" border="0"  width="647">
+	    <thead style="background:#fff">
+	        <tr><th>#</th>
+	            <th ng-click="changeSorting('name')">Name&nbsp;&nbsp;<span class="glyphicon glyphicon-sort">&nbsp;&nbsp;  </span></th>
+	            <th ng-click="changeSorting('country')">Country&nbsp;&nbsp;<span class="glyphicon glyphicon-sort">&nbsp;&nbsp;  </span></th>
+	            <th ng-click="changeSorting('winningAmount')">Winning Amount&nbsp;&nbsp;<span class="glyphicon glyphicon-sort">&nbsp;&nbsp;  </span></th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	    <tr ng-repeat="friend in soccer.bets | orderBy:sort.column:sort.descending">
+	    <td>{{$index + 1}}</td>
+	    <td>{{friend.name}} </td>
+	    <td>{{friend.country}} </td>
+	    <td>{{friend.winningAmount | currency }} </td>
+	    </tr>
+	    </tbody>
+	</table>
+</form>
+</div>

@@ -1,0 +1,36 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="/worldcup/resources/scripts/jquery-1.11.1.js"  type="text/javascript"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>    
+    
+    <!-- JS -->
+    <!-- load angular, ngRoute, ngAnimate -->
+    <script src="/worldcup/resources/scripts/angular.js"            type="text/javascript"></script>
+    <script src="/worldcup/resources/scripts/angular-route.js"      type="text/javascript"></script>
+    <script src="/worldcup/resources/scripts/angular-animate.js"    type="text/javascript"></script>
+    <script src="/worldcup/resources/scripts/app.js"                type="text/javascript"></script>
+    <script src="/worldcup/resources/soccer/soccerController.js"    type="text/javascript"></script>
+    <script src="/worldcup/resources/soccer/soccerServices.js"      type="text/javascript"></script>
+    <title>World Cup 2014</title>
+    <link rel="shortcut icon" href="/worldcup/resources/images/logo.png">
+</head>
+
+<!-- apply our angular app -->
+<body ng-app="soccerNgApp">
+
+    <!-- inject our views using ng-view -->
+    <!-- each angular controller applies a different class here -->
+    <div ng-view></div>
+        
+</body>
+</html>
