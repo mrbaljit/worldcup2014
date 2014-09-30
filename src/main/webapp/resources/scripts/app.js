@@ -14,11 +14,3 @@ soccerNgApp.config(function($routeProvider) {
     	});
 
 });
-
-
-// CONTROLLERS ============================================
-// home page controller
-//animateApp.controller('soccerController', function($scope) {
- //   $scope.pageClass = 'soccer';
-//});
-

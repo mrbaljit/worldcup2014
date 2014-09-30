@@ -16,7 +16,7 @@ public class InitService {
 	private MongoTemplate mongoTemplate;
 
 	private void init() {
-		// Populate our MongoDB database
+		// Populate our MongoDB database during server startup
 		logger.debug("Init MongoDB users");
 		
 		// Drop existing collection
@@ -24,7 +24,7 @@ public class InitService {
 		
 		// Create new object
 		Person p = new Person ();
-	//	p.setPid(UUID.randomUUID().toString());
+	    //p.setPid(UUID.randomUUID().toString());
 		p.setName("John");
 		p.setCountry("Smith");
 		p.setAmount(1000.0);
