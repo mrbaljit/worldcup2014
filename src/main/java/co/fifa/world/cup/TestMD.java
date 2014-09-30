@@ -22,6 +22,7 @@ import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.aggregation.TypedAggregation;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.authentication.UserCredentials;
 
 import com.mongodb.MongoClient;
 
@@ -36,8 +37,9 @@ public class TestMD {
     public static void main(String[] args) throws UnknownHostException {
         final String DB_NAME = "football";
         String LOCALHOST = "127.0.0.1";
+        UserCredentials userCredentials = new UserCredentials("soccer", "soccer");
         MongoClient client = new MongoClient(LOCALHOST);
-        MongoTemplate   mongoTemplate = new MongoTemplate(client, DB_NAME);
+        MongoTemplate mongoTemplate = new MongoTemplate(client, DB_NAME, userCredentials);
         Query query = new Query(where("name").exists(true));
         // Execute the query and find all matching entries
         List<Person> persons = mongoTemplate.find(query, Person.class);

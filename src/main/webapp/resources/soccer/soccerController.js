@@ -1,11 +1,6 @@
-
-
 soccerNgApp.controller("soccerController",
 
-
-		
   function($scope, $window,  soccerService) {
-	//alert('y');
 
 	soccerService.getSoccer(
             function(responseData) {
@@ -19,7 +14,7 @@ soccerNgApp.controller("soccerController",
             $scope.sort = {
                     column: '',
                     descending: false
-                };    
+                };
                 $scope.changeSorting = function(column) {
 
                     var sort = $scope.sort;
@@ -30,11 +25,7 @@ soccerNgApp.controller("soccerController",
                         sort.column = column;
                         sort.descending = false;
                     }
-                };            
-            
-
+                };
         };
-
 	}
-
 )
