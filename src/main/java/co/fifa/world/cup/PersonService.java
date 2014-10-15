@@ -63,10 +63,7 @@ public class PersonService {
                     p.setTotalAmount(totalBetAmount);
                 }
             }
-           
         }
-        
-        
         logger.debug("Persons size : " + persons.size());
 		return persons;
 	}
@@ -85,8 +82,4 @@ public class PersonService {
     	
 		return person;
 	}
-
-
-	
-
 }
