@@ -31,7 +31,4 @@ public class MainController {
         jsonBean.setTotalAmount(persons.get(0).getTotalAmount().toString());
         return jsonBean;
     }
-    
-
-    
 }

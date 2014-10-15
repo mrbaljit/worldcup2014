@@ -21,19 +21,13 @@ public class PersonJSONBean {
     
     private String totalAmount;
 
-    
     public String getTotalAmount() {
         return totalAmount;
     }
 
-
-
-    
     public void setTotalAmount(String totalAmount) {
         this.totalAmount = totalAmount;
     }
-
-
 
     private List<Person> bets;
 
@@ -41,11 +35,7 @@ public class PersonJSONBean {
         return bets;
     }
 
-
-    
     public void setBets(List<Person> bets) {
         this.bets = bets;
     }
-    
-
 }
