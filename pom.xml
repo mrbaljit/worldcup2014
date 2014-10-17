@@ -11,6 +11,8 @@
         <maven-jetty-plugin.version>9.0.4.v20130625</maven-jetty-plugin.version>
         <profile.resources>src/main/resources</profile.resources>
         <spring.version>4.1.0.RELEASE</spring.version>
+        <jodatime>2.4</jodatime>
+        <junit>4.11</junit>
     </properties>
     <dependencies>
         <dependency>
@@ -96,6 +98,18 @@
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-jaxrs</artifactId>
             <version>1.9.13</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${jodatime}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
