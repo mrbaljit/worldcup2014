@@ -255,6 +255,7 @@ public class AggregationTests {
         for (DBObject dbObject : personsWithAge25) {
             System.out.println(dbObject.get("_id"));
             System.out.println(dbObject.get("firstname"));
+            System.out.println(dbObject.get("lastname"));
         }
         Aggregation aggAge = newAggregation(group("age").push(Aggregation.ROOT).as("users"));
         result = mongoTemplate.aggregate(aggAge, Person.class, DBObject.class);
