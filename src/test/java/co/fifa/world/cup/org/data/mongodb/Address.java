@@ -16,7 +16,7 @@
 package co.fifa.world.cup.org.data.mongodb;
 
 /**
- * @author Oliver Gierke
+ * @author Oliver Gierke Singh
  */
 
 public class Address {
