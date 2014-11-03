@@ -147,7 +147,6 @@
                             <value>file:${profile.resources}/log4j.properties</value>
                         </systemProperty>
                     </systemProperties>
-
                     <stopKey>stop</stopKey>
                     <stopPort>7890</stopPort>
                 </configuration>
